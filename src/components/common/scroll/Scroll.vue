@@ -24,7 +24,7 @@
     data() {
       return {
         scroll: null,
-        message: '哈哈哈哈哈哈'
+        message: 'ha'
       }
     },
     mounted() {
