@@ -17,6 +17,25 @@ export function request(config) {
 
   // 2.2.响应拦截
   instance.interceptors.response.use(res => {
+    if(res.config.url.indexOf('data')!=-1){
+      let goodsItem ={
+        show:{
+          img:"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3880341262,3308316348&fm=26&gp=0.jpg"
+        },
+        title:"TEST",
+        price:0,
+        cfav:"1"
+      }
+      let data ={
+        data:{
+          list:[goodsItem],
+          banner:[],
+          recommend:[]
+        }
+      }
+      debugger
+      return data
+    }
     return res.data
   }, err => {
     console.log(err);
